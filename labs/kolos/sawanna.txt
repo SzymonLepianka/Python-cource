@@ -1,0 +1,37 @@
+import random
+import time
+import os
+
+wysokosc = int(input("wysokosc: "))
+szerokosc = int(input("szerokosc: "))
+tab = [-1 for i in range(wysokosc)]
+random.seed()
+waz=0
+while 1:
+    if waz ==0:
+        czy = True
+        while czy:
+            czy = False
+            losowana = random.randrange(szerokosc) + 1
+            for i in range (1,szerokosc):
+                if losowana == tab[i]:
+                    czy=True
+
+    tab.insert(0, losowana)
+    for i in range(0, wysokosc):
+        for j in range(0, szerokosc):
+            if j == szerokosc - 1:
+                if (j + 1) == tab[i]:
+                    print("*")
+                else:
+                    print("0")
+            else:
+                if (j + 1) == tab[i]:
+                    print("*", end="")
+                else:
+                    print("0", end="")
+    waz+=1
+    if waz==3:
+        waz = 0
+    time.sleep(0.1)
+    os.system('cls')

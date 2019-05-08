@@ -1,0 +1,41 @@
+import time
+import os
+import math
+
+n = int(input("podaj szerokosc: "))
+m = int(input("podaj wysokosc: "))
+srodek_x = (n - 1) / 2
+srodek_y = (m - 1) / 2
+x = srodek_x
+y = srodek_y
+czy = True
+while True:
+
+    os.system("cls")
+    for i in range(m):
+        for j in range(n):
+            if math.fabs(srodek_x - j) > x or math.fabs(srodek_y - i) > y:
+                if czy:
+                    print("X", end="")
+                else:
+                    print("0", end="")
+            else:
+                if czy:
+                    print("0", end="")
+                else:
+                    print("X", end="")
+        print("")
+    if x == 0 or y == 0:
+        x = srodek_x
+        y = srodek_y
+        if not czy:
+            czy = True
+        else:
+            czy = False
+    else:
+        x -= 1
+        y -= 1
+
+        # czy = True
+
+    time.sleep(0.4)

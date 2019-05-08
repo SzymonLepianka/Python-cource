@@ -1,0 +1,19 @@
+n = input("podaj liczbe: ")
+systemprzed = int(input("podaj system przed: "))
+systempo = int(input("podaj system po: "))
+suma = 0
+x = len(n)
+for i in n:
+    suma += int(i) * pow(systemprzed, x - 1)
+    x -= 1
+print("w dziesietnym: ", suma)
+i = 1
+while i * systempo < suma:
+    i *= systempo
+while i >= 1:
+    a = 0
+    while suma >= i:
+        suma -= i
+        a += 1
+    print(a, end="")
+    i /= systempo

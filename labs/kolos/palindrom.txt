@@ -1,0 +1,27 @@
+import string
+wyrazenie = input("podaj: ")
+wyrazenie=wyrazenie.lower()
+czyste_wyrarzenie=""
+for i in wyrazenie:
+    if i in string.ascii_lowercase:
+        czyste_wyrarzenie+=i
+i=0
+j=len(czyste_wyrarzenie)-1
+palindrom=True
+while i<j:
+    if czyste_wyrarzenie[i]!=czyste_wyrarzenie[j]:
+        palindrom=False
+        break
+    else:
+        i+=1
+        j-=1
+if palindrom:
+    print("palindrom")
+else:
+    print("nie palindrom")
+
+
+
+
+
+

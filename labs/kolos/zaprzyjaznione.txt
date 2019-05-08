@@ -1,0 +1,17 @@
+import time
+n = int(input("podaj zakres: "))
+start_time = time.time()
+tab = [0, 0]
+for i in range(2, n+1):
+    suma = 0
+    for j in range(1, int(i / 2) + 1):
+        if i % j == 0:
+            suma += j
+    tab.append(suma)
+print(tab)
+for i in range(2, n):
+    x = tab[i]
+    if x <=len(tab):
+        if i == tab[tab[i]] and i < x:
+            print(i, " oraz ", x)
+print("--- %s seconds ---" % (time.time() - start_time))
